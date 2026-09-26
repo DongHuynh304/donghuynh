@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dong Huynh — Mechanical Engineering</title>
+<style>
+  :root {
+    --bg: #f7f6f2; --card: #ffffff; --text: #1e1e1e; --muted: #666;
+    --accent: #b5452b; --line: #ddd8cc;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  nav { position: sticky; top: 0; background: var(--bg); border-bottom: 1px solid var(--line); z-index: 10; }
+  nav .wrap { display: flex; gap: 20px; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; }
+  nav a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 15px; }
+  nav a:hover { color: var(--accent); }
+  header { padding: 56px 0 32px; display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+  .avatar { width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
+            background: var(--line); flex-shrink: 0; }
+  h1 { margin: 0; font-size: 36px; }
+  .role { color: var(--accent); font-weight: 600; margin: 4px 0 10px; }
+  section { padding: 32px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 24px; margin: 0 0 20px; }
+  h3 { margin: 0 0 4px; font-size: 18px; }
+  .muted { color: var(--muted); font-size: 14px; }
+  .item { margin-bottom: 20px; }
+  .skills { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
+  .skills li { background: var(--card); border: 1px solid var(--line); padding: 4px 12px; border-radius: 20px; font-size: 14px; }
+  .btn { display: inline-block; background: var(--accent); color: #fff; padding: 8px 18px;
+         border-radius: 6px; text-decoration: none; font-weight: 600; }
+  .project { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+             padding: 24px; margin-bottom: 28px; }
+  .tags { margin: 8px 0 16px; }
+  .tags span { font-size: 13px; background: #f1e6e2; color: var(--accent); padding: 2px 10px; border-radius: 12px; margin-right: 6px; }
+  /* Timeline */
+  .timeline { position: relative; margin: 20px 0 0; padding-left: 28px; }
+  .timeline::before { content: ""; position: absolute; left: 8px; top: 4px; bottom: 4px; width: 2px; background: var(--line); }
+  .step { position: relative; margin-bottom: 24px; }
+  .step::before { content: ""; position: absolute; left: -26px; top: 6px; width: 14px; height: 14px;
+                  border-radius: 50%; background: var(--accent); border: 3px solid var(--card); box-shadow: 0 0 0 1px var(--accent); }
+  .date { font-weight: 700; color: var(--accent); font-size: 14px; }
+  .step img { width: 100%; max-width: 420px; border-radius: 8px; margin-top: 8px; display: block;
+              background: var(--line); min-height: 60px; }
+  footer { padding: 32px 0 48px; text-align: center; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#about">About</a>
+    <a href="#resume">Resume</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- ===== GIỚI THIỆU ===== -->
+  <header id="about">
+    <!-- Đổi ảnh: đặt ảnh vào thư mục images, tên avatar.jpg -->
+    <img class="avatar" src="images/avatar.jpg" alt="Dong Huynh">
+    <div>
+      <h1>Dong Huynh</h1>
+      <div class="role">Mechanical Engineering Student · University of Oklahoma</div>
+      <p>I'm a third-year mechanical engineering student who likes building real things.
+         Outside of class I work as a handyman doing fabrication and installation,
+         and I diagnose and repair cars as a personal project. I'm looking for an engineering internship.</p>
+    </div>
+  </header>
+
+  <!-- ===== CV ===== -->
+  <section id="resume">
+    <h2>Resume</h2>
+
+    <h3 style="margin-bottom:12px">Education</h3>
+    <div class="item">
+      <h3>B.S. Mechanical Engineering</h3>
+      <div class="muted">University of Oklahoma, Gallogly College of Engineering · 2024 – present</div>
+    </div>
+
+    <h3 style="margin:24px 0 12px">Experience</h3>
+    <div class="item">
+      <h3>Handyman — Self-employed</h3>
+      <div class="muted">Oklahoma City, OK · 2024 – present</div>
+      <p>Home maintenance, custom fabrication and installation. (Viết thêm 1–2 câu về công việc cụ thể.)</p>
+    </div>
+
+    <h3 style="margin:24px 0 12px">Skills</h3>
+    <ul class="skills">
+      <li>SolidWorks</li><li>Fabrication</li><li>Welding</li><li>Automotive diagnostics</li>
+      <li>Hand &amp; power tools</li><li>Vietnamese / English</li>
+    </ul>
+
+    <!-- Nếu muốn cho tải CV: bỏ ghi chú dòng dưới và đặt file resume.pdf (bản KHÔNG có số điện thoại, địa chỉ) -->
+    <!-- <p><a class="btn" href="resume.pdf">Download Resume (PDF)</a></p> -->
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <!-- PROJECT 1 — copy cả khối <div class="project">...</div> để thêm project mới -->
+    <div class="project">
+      <h3>Project Name 1</h3>
+      <div class="tags"><span>CAD</span><span>Fabrication</span></div>
+      <p>Short description: what problem it solves, what you built, and the result.</p>
+
+      <div class="timeline">
+        <div class="step">
+          <div class="date">Mar 2025</div>
+          <strong>Design</strong>
+          <p>Sketched ideas and modeled the parts in CAD.</p>
+          <img src="images/p1-1.jpg" alt="Design">
+        </div>
+        <div class="step">
+          <div class="date">Apr 2025</div>
+          <strong>Build</strong>
+          <p>Cut and welded the frame.</p>
+          <img src="images/p1-2.jpg" alt="Build">
+        </div>
+        <div class="step">
+          <div class="date">May 2025</div>
+          <strong>Test &amp; result</strong>
+          <p>Tested it, fixed issues, final result.</p>
+          <img src="images/p1-3.jpg" alt="Result">
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="project">
+      <h3>Project Name 2</h3>
+      <div class="tags"><span>Automotive</span><span>Repair</span></div>
+      <p>Short description of the project.</p>
+
+      <div class="timeline">
+        <div class="step">
+          <div class="date">Jan 2026</div>
+          <strong>Diagnosis</strong>
+          <p>Found the problem.</p>
+          <img src="images/p2-1.jpg" alt="Diagnosis">
+        </div>
+        <div class="step">
+          <div class="date">Feb 2026</div>
+          <strong>Repair</strong>
+          <p>What was replaced or fixed, and the outcome.</p>
+          <img src="images/p2-2.jpg" alt="Repair">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIÊN HỆ ===== -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a><br>
+       LinkedIn: <a href="https://www.linkedin.com/in/your-profile">linkedin.com/in/your-profile</a></p>
+  </section>
+
+</div>
+
+<footer class="muted">© 2026 Dong Huynh</footer>
+
+</body>
+</html>
